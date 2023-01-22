@@ -1,15 +1,15 @@
 # This workflow will build a Java project with Gradle
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
 
-name: Java CI with Gradle
+name: Java CI with Gradle # describes what the workflow is doing
 
-on:
+on: #line 6 is the name of the github events that triggers the workflow. This is called EVENTS
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 
-jobs:
+jobs: #this is the part that gets executed when we EVENTS happen. It groups a set of actions that will be executed
   build-java:
 
     runs-on: ubuntu-latest
@@ -35,4 +35,4 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-         
+#uses basically selects an action         
